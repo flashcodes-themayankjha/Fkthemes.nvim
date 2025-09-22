@@ -1,9 +1,7 @@
 
-# 🎨 FkThemes.nvim
-
 <div align="center">
 
-# FkNotes.nvim
+#  🎨 FkThemes.nvim
 
 **A simple yet powerful theme previewer and Selector plugin for Neovim, inspired by the FkVim ecosystem.**
 
