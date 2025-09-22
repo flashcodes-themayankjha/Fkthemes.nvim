@@ -1,6 +1,25 @@
 
 # 🎨 FkThemes.nvim
 
+<div align="center">
+
+# FkNotes.nvim
+
+**A simple yet powerful theme previewer and Selector plugin for Neovim, inspired by the FkVim ecosystem.**
+
+<a href="https://github.com/TheFlashCodes/FKvim">
+  <img src="https://img.shields.io/badge/FkVim-Ecosystem-blueviolet.svg?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTkuODYgMy41bDIuNjcgMy43NEwxNC40OCAzLjVoMy41MkwxMiAxMy4yOCAzLjk4IDMuNWg5Ljg4ek0xMiAxNS4wNGwtMy44NyA1LjQ2aDcuNzVsLTMuODgtNS40NnoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" alt="FkVim Ecosystem"/>
+</a>
+
+</div>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Made%20with-Lua-blue.svg?style=for-the-badge&logo=lua" />
+  <img src="https://img.shields.io/badge/Powered%20by-Neovim-green.svg?style=for-the-badge&logo=neovim" />
+  <a href="https://github.com/flashcodes-themayankjha/Fkthemes.nvim/stargazers"><img src="https://img.shields.io/github/stars/flashcodes-themayankjha/Fkthemes.nvim?style=for-the-badge" /></a>
+  <a href="https://github.com/flashcodes-themayankjha/Fkthemes.nvim/blob/main/LICENSE"><img src="https://img.shields.io/github/license/flashcodes-themayankjha/Fkthemes.nvim?style=for-the-badge" /></a>
+</p>
+
 [![Neovim](https://img.shields.io/badge/Neovim-0.8+-57A143?logo=neovim&logoColor=white)](https://neovim.io)  
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
