@@ -18,8 +18,6 @@
   <a href="https://github.com/flashcodes-themayankjha/Fkthemes.nvim/blob/main/LICENSE"><img src="https://img.shields.io/github/license/flashcodes-themayankjha/Fkthemes.nvim?style=for-the-badge" /></a>
 </p>
 
-[![Neovim](https://img.shields.io/badge/Neovim-0.8+-57A143?logo=neovim&logoColor=white)](https://neovim.io)  
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
 **FkThemes.nvim** is a modern Neovim plugin for **theme management**.  
 Easily switch, preview, and configure multiple colorschemes with a sleek UI powered by [nui.nvim](https://github.com/MunifTanjim/nui.nvim) and [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim).
