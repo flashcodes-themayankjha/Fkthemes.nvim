@@ -142,6 +142,16 @@ end
 -- Setup on startup
 function M.setup(opts)
   config.setup(opts)
+
+  -- Set up keymaps if enabled
+  if config.options.keymaps.enable then
+    for _, keymap_opts in pairs(config.options.keymaps) do
+      if type(keymap_opts) == "table" and keymap_opts.lhs and keymap_opts.rhs and keymap_opts.mode then
+        vim.keymap.set(keymap_opts.mode, keymap_opts.lhs, keymap_opts.rhs, { desc = keymap_opts.desc })
+      end
+    end
+  end
+
   vim.schedule(function()
     config.load_state()
     M.apply(config.current)
