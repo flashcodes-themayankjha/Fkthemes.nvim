@@ -11,7 +11,7 @@ M.options = {
     "material",
     "moonlight",
   },
-  default_theme = "tokyonight", -- New option for default theme
+  default_theme = "catppuccin", -- New option for default theme
   keymaps = {
     enable = true,
     open_picker = {
