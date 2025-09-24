@@ -118,12 +118,13 @@ function M.telescope_picker()
   local conf = require("telescope.config").values
   local actions = require("telescope.actions")
   local action_state = require("telescope.actions.state")
-  
+
   -- Save the current CursorLine background color before changing it
   local cursor_line_bg = vim.api.nvim_get_hl_by_name("CursorLine", true).background
 
   -- Disable CursorLine highlight while the picker is open
   vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
+  vim.opt_local.cursorline = false
 
   if config.options.transparent_background then
     apply_transparency()
@@ -193,6 +194,35 @@ function M.setup(opts)
       end
     end
   end
+
+  -- Disable cursorline and CursorLine highlight in Neo-tree buffers
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = "neo-tree",
+    callback = function()
+      vim.opt_local.cursorline = false
+      vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
+    end,
+  })
+
+  -- Restore CursorLine highlight after leaving Neo-tree buffer (adjust color as needed)
+  vim.api.nvim_create_autocmd("BufWinLeave", {
+    pattern = "*",
+    callback = function()
+      if vim.bo.filetype == "neo-tree" then
+        -- Replace with your colorscheme's original cursorline bg color
+        vim.api.nvim_set_hl(0, "CursorLine", { bg = "#2a2a2a" })
+      end
+    end,
+  })
+
+  -- Disable cursorline and CursorLine highlight in TelescopePrompt buffers
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = "TelescopePrompt",
+    callback = function()
+      vim.opt_local.cursorline = false
+      vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
+    end,
+  })
 
   vim.schedule(function()
     config.load_state()
