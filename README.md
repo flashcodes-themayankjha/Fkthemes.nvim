@@ -18,16 +18,17 @@
   <a href="https://github.com/flashcodes-themayankjha/Fkthemes.nvim/blob/main/LICENSE"><img src="https://img.shields.io/github/license/flashcodes-themayankjha/Fkthemes.nvim?style=for-the-badge" /></a>
 </p>
 
+> **FkThemes.nvim** is a modern Neovim plugin for **theme management**.  
+Easily switch, preview, and configure multiple colorschemes with a sleek UI powered by [nui.nvim](https://github.com/MunifTanjim/nui.nvim) and [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim).
 
 <img width="1698" height="1035" alt="image" src="https://github.com/user-attachments/assets/a5b508a2-b481-47a7-aea8-b814e717d6f6" />
-
-
-**FkThemes.nvim** is a modern Neovim plugin for **theme management**.  
-Easily switch, preview, and configure multiple colorschemes with a sleek UI powered by [nui.nvim](https://github.com/MunifTanjim/nui.nvim) and [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim).
+</br>
 
 ---
 
-<img width="1406" height="649" alt="image" src="https://github.com/user-attachments/assets/c067e2de-ee85-46cd-b9de-cb3b7a985a05" />
+<img width="3260" height="1534" alt="FkThemes" src="https://github.com/user-attachments/assets/b7056815-3a18-4c13-bde3-058dfffc2019" />
+
+
 
 
 ## ✨ Features
@@ -116,7 +117,8 @@ Customize `setup()` with your options.
 
 ### 🎨 Example with Transparency Support
 
-<img width="1199" height="766" alt="image" src="https://github.com/user-attachments/assets/a37d67e9-91ce-437a-852f-2e6ea9edc318" />
+<img width="2396" height="1560" alt="FkThemesTrans" src="https://github.com/user-attachments/assets/9cbabb91-fcdd-4d35-a19c-c645e290db0d" />
+
 
 Some themes allow native transparency. Configure them as dependencies:
 
