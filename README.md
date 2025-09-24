@@ -155,6 +155,8 @@ dependencies = {
 }
 ```
 
+> Transparency option only works properly if your chosen theme supports transparency
+
 ---
 
 ## 🚀 Usage
