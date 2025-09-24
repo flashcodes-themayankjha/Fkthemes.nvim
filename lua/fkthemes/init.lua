@@ -1,3 +1,4 @@
+
 local config = require("fkthemes.config")
 local M = {}
 
@@ -17,9 +18,13 @@ local function apply_transparency()
     "TelescopePromptTitle",
     "TelescopeResultsTitle",
     "TelescopePreviewTitle",
+    "TabLine",
+    "TabLineFill",
+    "TabLineSel",
     "BufferLineFill",
-    "Lualine",
-    "LualineInactive",
+    "BufferLineBackground",
+    "StatusLine",
+    "StatusLineNC",
     "WhichKey",
     "WhichKeyFloat",
     "LazyNormal",
@@ -30,12 +35,37 @@ local function apply_transparency()
     "PmenuSel",
     "PmenuSbar",
     "PmenuThumb",
+    "WinSeparator",
+    "VertSplit",
+    "SignColumn",
+    "CursorLineNr",
+    "BufferLineSeparator",
+    "ToolbarLine",
+    "BufferLineFill",
+    "WhichKeyFloat",
+    "NvimTreeNormal",
+    "NotifyWARNBody3",
+    "NotifyWARNTitle3",
+    "NotifyWARNBorder3",
+    "NotifyWARNIcon3",
+    "BufferLineTab",
+    "BufferLineDuplicate",
+    "BufferLineDuplicateVisible",
   }
 
   for _, hl in ipairs(highlights) do
     vim.api.nvim_set_hl(0, hl, { bg = "none" })
   end
 end
+
+-- Re-apply transparency after any colorscheme load
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    if config.options.transparent_background then
+      apply_transparency()
+    end
+  end,
+})
 
 -- Safely apply a theme
 function M.apply(idx)
@@ -54,7 +84,7 @@ function M.apply(idx)
         apply_transparency()
       end
     else
-      vim.notify("Fkthemes: colorscheme '"..theme.."' not installed!", vim.log.levels.WARN)
+      vim.notify("Fkthemes: colorscheme '" .. theme .. "' not installed!", vim.log.levels.WARN)
     end
   end
 end
@@ -73,7 +103,7 @@ function M.set(name)
       return
     end
   end
-  vim.notify("Fkthemes: Theme '"..name.."' not found!", vim.log.levels.WARN)
+  vim.notify("Fkthemes: Theme '" .. name .. "' not found!", vim.log.levels.WARN)
 end
 
 -- Telescope picker with live preview
@@ -88,13 +118,19 @@ function M.telescope_picker()
   local conf = require("telescope.config").values
   local actions = require("telescope.actions")
   local action_state = require("telescope.actions.state")
+  
+  -- Save the current CursorLine background color before changing it
+  local cursor_line_bg = vim.api.nvim_get_hl_by_name("CursorLine", true).background
+
+  -- Disable CursorLine highlight while the picker is open
+  vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
 
   if config.options.transparent_background then
     apply_transparency()
   end
 
   pickers.new({}, {
-    prompt_title = "🎨 Fkthemes",
+    prompt_title = "🎨 FkThemes",
     finder = finders.new_table { results = config.options.themes },
     sorter = conf.generic_sorter({}),
     attach_mappings = function(prompt_bufnr, map)
@@ -105,7 +141,6 @@ function M.telescope_picker()
         end
       end
 
-      -- override movement keys to preview theme while navigating
       for _, key in ipairs({ "<Down>", "<Up>", "j", "k" }) do
         map("i", key, function()
           if key == "<Down>" or key == "j" then
@@ -125,7 +160,6 @@ function M.telescope_picker()
         end)
       end
 
-      -- Enter to finalize
       actions.select_default:replace(function()
         local selection = action_state.get_selected_entry()
         actions.close(prompt_bufnr)
@@ -137,13 +171,21 @@ function M.telescope_picker()
       return true
     end,
   }):find()
+
+  -- Restore CursorLine highlight after the picker is closed
+  vim.api.nvim_create_autocmd("BufWinLeave", {
+    pattern = "TelescopePrompt",
+    once = true,
+    callback = function()
+      vim.api.nvim_set_hl(0, "CursorLine", { bg = cursor_line_bg })
+    end,
+  })
 end
 
 -- Setup on startup
 function M.setup(opts)
   config.setup(opts)
 
-  -- Set up keymaps if enabled
   if config.options.keymaps.enable then
     for _, keymap_opts in pairs(config.options.keymaps) do
       if type(keymap_opts) == "table" and keymap_opts.lhs and keymap_opts.rhs and keymap_opts.mode then
