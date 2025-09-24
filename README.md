@@ -19,10 +19,16 @@
 </p>
 
 
+<img width="1698" height="1035" alt="image" src="https://github.com/user-attachments/assets/a5b508a2-b481-47a7-aea8-b814e717d6f6" />
+
+
 **FkThemes.nvim** is a modern Neovim plugin for **theme management**.  
 Easily switch, preview, and configure multiple colorschemes with a sleek UI powered by [nui.nvim](https://github.com/MunifTanjim/nui.nvim) and [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim).
 
 ---
+
+<img width="1406" height="649" alt="image" src="https://github.com/user-attachments/assets/c067e2de-ee85-46cd-b9de-cb3b7a985a05" />
+
 
 ## ✨ Features
 
@@ -110,6 +116,8 @@ Customize `setup()` with your options.
 
 ### 🎨 Example with Transparency Support
 
+<img width="1199" height="766" alt="image" src="https://github.com/user-attachments/assets/a37d67e9-91ce-437a-852f-2e6ea9edc318" />
+
 Some themes allow native transparency. Configure them as dependencies:
 
 ```lua
@@ -161,7 +169,7 @@ dependencies = {
 
 ## 🚀 Usage
 
-* **Open Theme Picker** → `:FkThemes` or `<leader>tp`
+* **Open Theme Picker** → `:FkThemePicker` or `<leader>tp`
 * **Next Theme** → `:FkThemeNext` or `<leader>tn`
 * **Preview Live** → Navigate themes inside the picker
 
