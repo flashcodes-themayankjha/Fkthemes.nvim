@@ -1,7 +1,7 @@
 
 <div align="center">
 
-#  🎨 FkThemes.nvim
+#  🎨 fkthemes.nvim
 
 **A simple yet powerful theme previewer and Selector plugin for Neovim, inspired by the FkVim ecosystem.**
 
@@ -18,7 +18,7 @@
   <a href="https://github.com/flashcodes-themayankjha/Fkthemes.nvim/blob/main/LICENSE"><img src="https://img.shields.io/github/license/flashcodes-themayankjha/Fkthemes.nvim?style=for-the-badge" /></a>
 </p>
 
-> **FkThemes.nvim** is a modern Neovim plugin for **theme management**.  
+> **fkthemes.nvim** is a modern Neovim plugin for **theme management**.  
 Easily switch, preview, and configure multiple colorschemes with a sleek UI powered by [nui.nvim](https://github.com/MunifTanjim/nui.nvim) and [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim).
 
 <img width="1698" height="1035" alt="image" src="https://github.com/user-attachments/assets/a5b508a2-b481-47a7-aea8-b814e717d6f6" />
@@ -55,7 +55,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 
 ```lua
 {
-  "flashcodes-themayankjha/Fkthemes.nvim",
+  "flashcodes-themayankjha/fkthemes.nvim",
   event = "VeryLazy",
   dependencies = {
     "MunifTanjim/nui.nvim",
