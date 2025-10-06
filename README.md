@@ -165,7 +165,9 @@ dependencies = {
 }
 ```
 
-> Transparency option only works properly if your chosen theme supports transparency
+> **Note**
+> Transparency only works properly if your chosen theme supports it.  
+> For the best transparency experience, use **fkthemes.nvim** with [Fkvim](https://fkvim.netlify.app/).
 
 ---
 
